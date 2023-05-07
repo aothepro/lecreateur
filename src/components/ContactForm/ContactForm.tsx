@@ -270,6 +270,7 @@ export const ContactForm = ({ headerText }: { headerText: string }) => {
       );
 
     default:
+      return <></>;
       break;
   }
 };
