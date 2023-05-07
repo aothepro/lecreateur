@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+/* @font-face {
+  font-family: Scriptina;
+  src: url("/fonts/Scriptina-Pro.otf");
+} */
+
+.home {
+  text-align: center;
+  background-image: url("https://storage.googleapis.com/wzuk/assets/images/5575aa2b3d16aJJfcFf0/20452664_lel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #000000;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+}
+
+.by-appt-only {
+  font-size: 10vmin;
+  color: white;
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+.sticky-button {
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  padding: 0 10px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.arrow-down {
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  animation: bounce 1.2s infinite;
+  padding-left: 5px;
+}
+
+.sticky-button:hover {
+  font-size: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}

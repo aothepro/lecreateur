@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Whisper";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/l/font?kit=q5uHsoqtKftx74K9mixCARxcs5JwS4bCwyftc-39-xL45hA2DDKAwx7K&skey=fabe67013ef2e39f&v=v2")
+    format("woff2");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
