@@ -1,21 +1,28 @@
-const superagent = require("superagent");
-
-export const sendEmail = ({ name, email, contactNumber, details }) => {
+const { EMAIL_SENDGRID_API_KEY } = process.env;
+export const sendEmail = ({
+  name,
+  email,
+  contactNumber,
+  message,
+}: {
+  name: string;
+  email: string;
+  contactNumber: string;
+  message: string;
+}) => {
   const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
 
-  return superagent
-    .post(sendGridUrl)
-    .set({
-      Authorization:
-        "Bearer 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",
-      "Content-Type": "application/json",
-    })
-    .send({
+  return fetch(sendGridUrl, {
+    method: "POST",
+    body: JSON.stringify({
       personalizations: [
         {
           to: [
             {
               email: "lecreateurjewel@outlook.com",
+            },
+            {
+              email: "ao356@live.com",
             },
           ],
         },
@@ -38,10 +45,15 @@ export const sendEmail = ({ name, email, contactNumber, details }) => {
             "<h2>Contact: </h2>" +
             contactNumber +
             "<br>" +
-            "<h2>Details: </h2>" +
-            details +
+            "<h2>Message: </h2>" +
+            message +
             "<br>",
         },
       ],
-    });
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${EMAIL_SENDGRID_API_KEY}`,
+    },
+  });
 };
