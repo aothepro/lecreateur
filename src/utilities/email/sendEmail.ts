@@ -55,5 +55,5 @@ export const sendEmail = ({
       "Content-type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${EMAIL_SENDGRID_API_KEY}`,
     },
-  });
+  }).catch((e) => console.error(e));
 };

@@ -17,5 +17,12 @@ export default function sendTelegramMessage(
         "Content-type": "application/json; charset=UTF-8",
       },
     }
-  );
+  )
+    .then(async (response) => {
+      const responseBody = await response.json();
+      if (!responseBody.ok) {
+        throw responseBody;
+      }
+    })
+    .catch(() => console.error("Error: Failed to send telegram message"));
 }

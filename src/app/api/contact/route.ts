@@ -6,12 +6,12 @@ export async function POST(req: NextRequest) {
   const { contactNumber, email, message, name } = await req.json();
 
   // Send to email
-  sendEmail({ contactNumber, email, message, name });
+  await sendEmail({ contactNumber, email, message, name });
 
   // Telegram message
   await sendTelegramMessage(
     `*Name*: ${name}\n*Contact Number*: ${contactNumber}\n*Email*: ${email}\n\n*Message*: ${message}`
-  ).catch(() => console.error("Error: Failed to send telegram message"));
+  );
 
   return NextResponse.json({ contactNumber, email, message, name });
 }
