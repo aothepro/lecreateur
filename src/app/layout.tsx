@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     siteName: "LeCréateur Jewelry - Uniquely Made Rings",
     images: [
       {
-        url: "/lecreateur-og-800.jpg",
+        url: "https://lecreateurjewel.com/lecreateur-og-800.jpg",
         width: 800,
         height: 600,
       },
       {
-        url: "/lecreateurjewel-og-1800.jpg",
+        url: "https://lecreateurjewel.com/lecreateurjewel-og-1800.jpg",
         width: 1800,
         height: 1600,
-        alt: "My custom alt",
+        alt: "lecreateur jewellery crafting engagement ring",
       },
     ],
     locale: "en-US",
